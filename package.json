@@ -1,0 +1,20 @@
+{
+  "name": "iammutable",
+  "version": "1.0.0",
+  "description": "Returns an Object.freeze",
+  "main": "iammutable.js",
+  "scripts": {
+    "test": "mocha iammutable.test.js"
+  },
+  "keywords": [
+    "node.js",
+    "immutable",
+    "const",
+    "webschool"
+  ],
+  "author": "Suissa",
+  "license": "WTFPL",
+  "dependencies": {
+    "chai": "^3.5.0"
+  }
+}
