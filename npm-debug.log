@@ -1,0 +1,100 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@3.9.3
+3 info using node@v6.2.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/jeancarlonascimento/www/projetos/Atomic-modules/iammutable',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/jeancarlonascimento/.npm/iammutable/1.0.0/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/jeancarlonascimento/.npm correctMkdir not in flight; initializing
+10 info lifecycle iammutable@1.0.0~prepublish: iammutable@1.0.0
+11 silly lifecycle iammutable@1.0.0~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/jeancarlonascimento/.npm/iammutable/1.0.0/package.tgz',
+12 verbose tar pack   '/Users/jeancarlonascimento/www/projetos/Atomic-modules/iammutable' ]
+13 verbose tarball /Users/jeancarlonascimento/.npm/iammutable/1.0.0/package.tgz
+14 verbose folder /Users/jeancarlonascimento/www/projetos/Atomic-modules/iammutable
+15 verbose addLocalTarball adding from inside cache /Users/jeancarlonascimento/.npm/iammutable/1.0.0/package.tgz
+16 verbose correctMkdir /Users/jeancarlonascimento/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd iammutable@1.0.0
+18 verbose afterAdd /Users/jeancarlonascimento/.npm/iammutable/1.0.0/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/jeancarlonascimento/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/jeancarlonascimento/.npm/iammutable/1.0.0/package/package.json written
+21 silly publish { name: 'iammutable',
+21 silly publish   version: '1.0.0',
+21 silly publish   description: 'Returns an Object.freeze',
+21 silly publish   main: 'iammutable.js',
+21 silly publish   scripts: { test: 'mocha iammutable.test.js' },
+21 silly publish   keywords: [ 'node.js', 'immutable', 'const', 'webschool' ],
+21 silly publish   author: { name: 'Suissa' },
+21 silly publish   license: 'WTFPL',
+21 silly publish   dependencies: { chai: '^3.5.0' },
+21 silly publish   readme: '# I am mutable\n\nBut not.\n\n![](https://abhirockzz.files.wordpress.com/2014/01/immutable-defined.png)\n\n```js\nconst immutable = {}\nconst RealImmutable = require(\'iammutable\')(immutable)\nconsole.log(Object.isFrozen(RealImmutable))\n```\n\nIf you want to use as a `GLOBAL`, **CAUTION!!!**:\n\n```js\n\'use strict\'\n// Not a good practice\nrequire(\'./iammutable.global\')\n\nconst immutable = {\n  name: \'Webschool\',\n  sayName: (name) => \'Nome: \' + name\n}\nconst RealImmutable = Immutable(immutable)\nconsole.log(Object.isFrozen(RealImmutable))\n\nRealImmutable.test = true\n```\n\nNow you have `Immutable()` as a **global function**!\n\n\n```js\n// iammutable.global.js\n\'use strict\'\n\nglobal.Immutable = (obj) => {\n  if(Object.isFrozen(obj)) return obj \n  return Object.freeze(obj)\n}\n```',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '07b142692ae0cc279158a86421b5eb6f117f3f38',
+21 silly publish   _id: 'iammutable@1.0.0',
+21 silly publish   _shasum: '4f09c5180804fea57439f0375321969be76a50e1',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name iammutable
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry http://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'iammutable',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   name: 'iammutable',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri http://registry.npmjs.org/iammutable
+28 verbose publish registryBase http://registry.npmjs.org/
+29 silly publish uploading /Users/jeancarlonascimento/.npm/iammutable/1.0.0/package.tgz
+30 verbose request uri http://registry.npmjs.org/iammutable
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 12:10:26 PM
+33 verbose request id 6ee2009585920df8
+34 http request PUT http://registry.npmjs.org/iammutable
+35 http 403 http://registry.npmjs.org/iammutable
+36 verbose headers { 'content-type': 'application/json',
+36 verbose headers   'cache-control': 'max-age=300',
+36 verbose headers   'content-length': '95',
+36 verbose headers   'accept-ranges': 'bytes',
+36 verbose headers   date: 'Mon, 18 Jul 2016 15:10:27 GMT',
+36 verbose headers   via: '1.1 varnish',
+36 verbose headers   connection: 'keep-alive',
+36 verbose headers   'x-served-by': 'cache-gru7120-GRU',
+36 verbose headers   'x-cache': 'MISS',
+36 verbose headers   'x-cache-hits': '0',
+36 verbose headers   'x-timer': 'S1468854626.791720,VS0,VE817',
+36 verbose headers   vary: 'Accept-Encoding' }
+37 verbose request invalidating /Users/jeancarlonascimento/.npm/registry.npmjs.org/iammutable on PUT
+38 error publish Failed PUT 403
+39 verbose stack Error: "You cannot publish over the previously published version 1.0.0." : iammutable
+39 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+39 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+39 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+39 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
+39 verbose stack     at emitTwo (events.js:106:13)
+39 verbose stack     at Request.emit (events.js:191:7)
+39 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+39 verbose stack     at emitOne (events.js:101:20)
+39 verbose stack     at Request.emit (events.js:188:7)
+39 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
+40 verbose statusCode 403
+41 verbose pkgid iammutable
+42 verbose cwd /Users/jeancarlonascimento/www/projetos/Atomic-modules/iammutable
+43 error Darwin 14.5.0
+44 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+45 error node v6.2.1
+46 error npm  v3.9.3
+47 error code E403
+48 error "You cannot publish over the previously published version 1.0.0." : iammutable
+49 error If you need help, you may report this error at:
+49 error     <https://github.com/npm/npm/issues>
+50 verbose exit [ 1, true ]
