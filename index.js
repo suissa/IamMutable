@@ -1,3 +1,4 @@
+'use strict';
 const immutable = {}
 const RealImmutable = require('./iammutable')(immutable)
 console.log(Object.isFrozen(RealImmutable))
